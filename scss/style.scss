@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+
+
+
+    // #### Text
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Soft-red: hsl(14, 88%, 65%);
+
+    // #### Gradient
+
+    // Background gradient:
+    --Soft-violet: hsl(273, 75%, 66%);
+    --Soft-blue: hsl(240, 73%, 65%);
+
+
+    // #### Text
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+
+    // #### Dividers
+    --Light-grayish-blue: hsl(240, 5%, 91%);
+
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: 'Kumbh Sans', sans-serif;
+    // font-size: 1.2rem;
+
+    background:linear-gradient(180deg, var(--Soft-violet) 30%, var(--Soft-blue));
+
+}
+
+.main{
+    min-height: 100vh;
+    padding: 2rem clamp(0rem, 3rem, 3vw);
+
+    @media screen and (min-width: 1000px) {
+        display: grid;
+    }
+}
+
+.faq{
+    max-width: 55rem;
+    margin: clamp(0rem, 34%, 16rem) auto 0;
+    background-color: #fff;
+    border-radius: 2rem;
+
+    position: relative;
+
+    &__images-mobile{
+        height: clamp(10vw, 20vw, 13rem);
+        position: relative;
+        
+        img{
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 0%;
+            
+        }
+    }
+
+    &__woman-img{
+        width: 75%;
+        transform: translate(-56%, -55%);
+
+    }
+    &__pattern-img{
+        width: 70%;
+        transform: translate(-50%, -5%);
+    }
+
+    &__images-desktop{
+        display: none;
+    }
+    &__box-img{
+        display: none;
+    }
+
+    @media screen and (min-width: 1000px){
+        width: 90%;
+        height: 55rem;
+        max-width: 1150px;
+        margin: auto;
+        display: flex;
+
+        &__images-mobile{
+            display: none;
+        }
+
+        &__images-desktop{
+            display: block;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+
+            img{
+                position: absolute;
+                left: 0%;
+                top: 50%;
+
+                
+            }
+        }
+
+        &__woman-img{
+            transform: translate(-17%, -55%);
+            width: 100%;
+            
+        }
+        &__pattern-img{
+            transform: translate(-50%, -60%);
+            width: 170%;
+
+        }
+
+        &__box-img{
+            display: block;
+            position: absolute;
+            width: 18%;
+            left: 0%;
+            top: 50%;
+            transform: translate(-50%, -30%);
+            animation: boxAnimation 2.5s ease-in-out infinite alternate;
+        }
+    }
+}
+
+@keyframes boxAnimation {
+    from{
+        transform: translate(-50%, -30%);
+        filter: hue-rotate(0deg);
+    }
+
+    to{
+        transform: translate(-50%, -35%);
+        filter: hue-rotate(160deg);
+
+    }
+    
+}
+
+
+
+.accordion-container{
+    padding: 4rem clamp(1rem, 2.5rem, 5vw);
+    &__heading{
+        margin-bottom: 2.5rem;
+        
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    @media screen and(min-width: 1000px){
+        width: 100%;
+        align-self: center;
+        padding: 5rem 5rem 5rem 0;
+
+        display: grid;
+        align-content: center;
+
+        &__heading{
+            text-align: left;
+            margin-top: 4rem;
+        }
+
+    }
+
+}
+
+.accordion{
+    &__item{
+        border-bottom: 1px solid var(--Light-grayish-blue);
+    }
+    &__header{
+        padding: 1.5rem 2.5rem 1.5rem 0;
+
+        cursor: pointer;
+
+        position: relative;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        color: var(--Very-dark-grayish-blue);
+        @media screen and (min-width: 1000px){
+            font-size: 1.5rem;
+        }
+
+        &::before{
+            content: url("../images/icon-arrow-down.svg");
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(0%, -50%);
+            transition: transform 0.3s ease;
+
+        }
+
+        &:hover{
+            color: var(--Soft-red);
+        }
+
+    }
+    &__body-container{
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease;
+    }
+    &__body{
+        color: var(--Dark-grayish-blue);
+        padding: 0 0 1.5rem;
+        @media screen and (min-width: 1000px){
+            font-size: 1.4rem;
+        }
+
+    }
+
+    &__item.active{
+        .accordion__header{
+            font-weight: 700;
+
+            &::before{
+                transform: translate(-50%, -50%) rotate(180deg);
+
+            }
+        }
+    }
+    @media screen and (min-width: 1000px){
+        height: 35rem;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+
+}
+
+

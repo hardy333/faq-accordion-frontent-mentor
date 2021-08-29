@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <link rel="stylesheet" href="css/style.css">
+
+  <script
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous"></script>
+ <!-- Plugin CSS -->
+ <link type="text/css" href="./vendor/OverlayScrollbars.min.css" rel="stylesheet"/>
+ <!-- Plugin JS -->
+ <script type="text/javascript" src="./vendor/jquery.overlayScrollbars.min.js"></script>
+</head>
+<body>
+
+
+  <main class="main">
+    <article class="faq">
+      <div class="faq__images-desktop">
+        <img class="faq__pattern-img" src="./images/bg-pattern-desktop.svg" alt="bg pattern">
+        <img class="faq__woman-img" src="./images/illustration-woman-online-desktop.svg" alt="ilustration of women this dashboard">
+      </div>
+      <img class="faq__box-img" src="./images/illustration-box-desktop.svg" alt="box">
+
+      <div class="faq__images-mobile">
+        <img class="faq__pattern-img" src="./images/bg-pattern-mobile.svg" alt="bg pattern">
+        <img class="faq__woman-img" src="./images/illustration-woman-online-mobile.svg" alt="ilustration of women this dashboard">
+      </div>
+
+      <div class="accordion-container">
+        <h1 class="accordion-container__heading">FAQ</h1>
+        <div class="accordion">
+          <!-- 1 -->
+          <div class="accordion__item">
+            <p class="accordion__header">
+              How many team members can I invite?
+            </p>
+            <div class="accordion__body-container">
+              <p class="accordion__body">
+                You can invite up to 2 additional users on the Free plan. There is no limit on 
+                team members for the Premium plan.
+              </p>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class="accordion__item">
+            <p class="accordion__header">
+              What is the maximum file upload size?
+            </p>
+            <div class="accordion__body-container">
+              <p class="accordion__body">
+                No more than 2GB. All files in your account must fit your allotted storage space.
+              </p>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="accordion__item">
+            <p class="accordion__header">
+              How do I reset my password?
+            </p>
+            <div class="accordion__body-container">
+              <p class="accordion__body">
+                Click “Forgot password” from the login page or “Change password” from your profile page.
+                A reset link will be emailed to you.
+              </p>
+            </div>
+          </div>
+          <!-- 4 -->
+          <div class="accordion__item">
+            <p class="accordion__header">
+              Can I cancel my subscription?
+            </p>
+            <div class="accordion__body-container">
+              <p class="accordion__body">
+                Yes! Send us a message and we’ll process your request no questions asked.
+              </p>
+            </div>
+          </div>
+          <!-- 5 -->
+          <div class="accordion__item">
+            <p class="accordion__header">
+              Do you provide additional support?
+            </p>
+            <div class="accordion__body-container">
+              <p class="accordion__body">
+                Chat and email support is available 24/7. Phone lines are open during normal business hours.
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+    </article>
+  </main>
+  
+  
+  
+
+
+
+
+
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+
+  <script src="js/main.js"></script>
+</body>
+</html>
